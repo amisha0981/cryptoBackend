@@ -17,7 +17,7 @@ app.use('/api', coinRoutes);
 
 
 app.get("/", (req, res) => {
-  res.send("hello world i am here to help you  !! Last Deployed on 11-06-2025");  
+  res.send("hello world i am here to help you  !! Last Deployed on 18-07-2025");  
 });
 
 mongoose.connect(process.env.DB).then(() => {
