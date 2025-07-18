@@ -36,7 +36,7 @@ const keepAlive = () => {
     } catch (error) {
       console.error('Ping failed:', error.message);
     }
-  }, 1 * 60 * 1000); 
+  }, 10 * 60 * 1000); 
 };
 keepAlive();
 
