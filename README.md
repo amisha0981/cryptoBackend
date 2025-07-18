@@ -13,3 +13,7 @@ npm start
 <!-- cron job -->
 cron job run in every one hour 
 
+
+<!-- deployed url -->
+Backend url = https://cryptobackend-6gjp.onrender.com
+Frontend url = https://cryptofrontend-rose.vercel.app

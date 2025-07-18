@@ -25,6 +25,20 @@ mongoose.connect(process.env.DB).then(() => {
   console.log(error);
 });
 
+
+// cron job function to alive render 
+const keepAlive = () => {
+  setInterval(async () => {
+    try {
+      await axios.get('https://mern-backend.onrender.com/api/health');
+      console.log('Pinged server to keep it alive');
+    } catch (error) {
+      console.error('Ping failed:', error.message);
+    }
+  }, 10 * 60 * 1000); 
+};
+keepAlive();
+
 const port = process.env.PORT || 5000;
 
 app.listen(port,function () {
