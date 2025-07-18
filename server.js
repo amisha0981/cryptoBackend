@@ -8,7 +8,7 @@ const startCronJob = require("./utilis/cronJob")
 dotenv.config({ path: "./.env" });
 
 const app = express();
-app.use(cors())
+app.use(cors({ origin: process.env.FRONTEND_URL}))
 app.use(express.json());
 
 
