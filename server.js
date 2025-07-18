@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const axios = require("axios");
 const cors = require("cors");
 const coinRoutes = require("./Routes/coinRoute");
 const startCronJob = require("./utilis/cronJob")
@@ -30,12 +31,12 @@ mongoose.connect(process.env.DB).then(() => {
 const keepAlive = () => {
   setInterval(async () => {
     try {
-      await axios.get('https://mern-backend.onrender.com/api/health');
+      await axios.get('https://cryptobackend-6gjp.onrender.com/api/coin');
       console.log('Pinged server to keep it alive');
     } catch (error) {
       console.error('Ping failed:', error.message);
     }
-  }, 10 * 60 * 1000); 
+  }, 1 * 60 * 1000); 
 };
 keepAlive();
 
